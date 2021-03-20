@@ -1,0 +1,7 @@
+.example_block {
+    width: 100%;
+}
+
+.example_block__paragraph--red {
+    color: red;
+}
