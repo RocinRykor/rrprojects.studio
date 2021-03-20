@@ -5,4 +5,4 @@ general = Blueprint("general", __name__)
 
 @general.route("/")
 def index():
-    return "<h1>This will be the main page</h1>"
+    return render_template("index.html")
