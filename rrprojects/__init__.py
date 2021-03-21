@@ -1,12 +1,12 @@
 import os
 import sys
 
-# For future me, the site was at least live by 2018-12-14
+# This site was started on 2021-03-17
 
 basedir = os.path.abspath(os.path.dirname(__file__))
 sys.path.append(basedir)
 
 
-import rrprojects
+import app
 
-application = rrprojects.application
+application = app.application
