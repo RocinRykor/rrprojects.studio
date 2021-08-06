@@ -4,11 +4,11 @@ from flask_migrate import Migrate
 from routes.general import general
 from routes.admin import admin
 from models import db
-from flask_statistics import Statistics
+# from flask_statistics import Statistics
 
 
 migrate = Migrate()
-statistics = Statistics()
+# statistics = Statistics()
 
 
 def check_user():
@@ -28,7 +28,7 @@ def build_app():
     app.register_blueprint(admin)
     db.init_app(app)
     migrate.init_app(app, db)
-    statistics.init_app(app, db, Request, check_user)
+    # statistics.init_app(app, db, Request, check_user)
 
     return app
 
