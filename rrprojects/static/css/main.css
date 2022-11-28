@@ -1,28 +1,42 @@
+:root {
+    --primary-color: #2c3531;
+    --secondary-color: #116466;
+    --tertiary-color: #d9b08c;
+    --primary-trim: #ffcb9a;
+    --secondary-trim: #d1e8e2;
+
+    --old-primary: #282c34;
+    --old-secondary: #46b5c0;
+    --old-nav: #cbc10e;
+    --old-trim: #0f5;
+    --old-alt: #606060;
+}
+
 html {
-  box-sizing: border-box;
-  width: 100%;
-  background-color: #282c34;
-  color: #46b5c0;
-  font-size: 1.1rem;
-  /*font-family: monospace;*/
-  font-family: 'Inconsolata', monospace;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+    box-sizing: border-box;
+    width: 100%;
+    background-color: var(--primary-color);
+    color: var(--tertiary-color);
+    font-size: 1.1rem;
+    /*font-family: monospace;*/
+    font-family: "Dosis", sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 body {
-  box-sizing: border-box;
-  width: 80%;
-  min-height: 98vh;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
+    box-sizing: border-box;
+    width: 80%;
+    min-height: 98vh;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
 }
 
 .main_nav {
     width: 100%;
-    border-top: 2px solid #cbc10e;
+    border-top: 2px solid var(--secondary-color);
 }
 
 .main_links {
@@ -34,32 +48,61 @@ body {
 .main_links li {
     text-decoration: none;
     text-align: center;
-    color: #46b5c0;
+    color: var(--secondary-trim);
     display: inline-block;
     height: 1.5rem;
     flex: 1 0 auto;
-    padding-top: .5rem;
+    padding-top: 0.5rem;
 }
 
 .navlink {
-  text-decoration: none;
-  color: #46b5c0;
-  display: inline-block;
-  height: 1.5rem;
-  flex: 1 0 auto;
-  padding-top: .5rem;
+    text-decoration: none;
+    color: var(--secondary-trim);
+    display: inline-block;
+    height: 1.5rem;
+    flex: 1 0 auto;
+    padding-top: 0.5rem;
 }
 
 .navlink:hover {
-  color: #0f5;
-  background: #606060;
+    color: var(--primary-trim);
+    background: var(--secondary-color);
 }
 
 .navlink:visited {
-  color: #46b5c0;
+    color: var(--secondary-trim);
 }
 
 .main_title {
     text-align: center;
     margin: auto;
+}
+
+p {
+    font-style: italic;
+}
+
+.container {
+    max-width: 840px;
+    margin: 0 auto;
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+
+.i-am,
+.i-like {
+    text-align: center;
+    text-decoration: none;
+}
+
+.about-list {
+    list-style: none;
+    padding: 0;
+}
+
+.intro {
+    text-align: center;
 }

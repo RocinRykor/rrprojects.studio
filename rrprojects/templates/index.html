@@ -1,7 +1,16 @@
-{% extends "partials/base.html" %}
+{% extends "partials/base.html" %} {% block main %}
 
-{% block main %}
-
-<h2>This is the main block on the Example page</h2>
+<main class="profile-main">
+    <img
+        src="{{url_for('static', filename='img/steven-briggs-profile-pic.jpg')}}"
+        class="profile_portrait"
+        alt="Steven Briggs' Portrait" />
+    <h1>Hello World!</h1>
+    <p>
+        My name is Steven Briggs. I am a <span>web</span> developer from
+        Washington.
+    </p>
+    <a href="/work">Check out some of my code</a>
+</main>
 
 {% endblock %}

@@ -1,0 +1,236 @@
+/* 1 || Universal*/
+:root {
+    /* Steel Blue Pallete */
+    --dark: #1b3246;
+    --medium: #4682b4;
+    --light: #b2cce1;
+
+    --primary-accent: #b4af46;
+    --secondary-accent: #b4464b;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+/* 2 || Document */
+html,
+body {
+    height: 100%;
+}
+/* 3 || Metadata */
+
+/* 4 || Sections */
+body {
+    /* Base || Colors*/
+    background-color: var(--light);
+    color: black;
+
+    /* || Fonts*/
+    font-family: "Dosis", sans-serif;
+    font-weight: 300;
+    font-size: 18px;
+    /* Sets the font size to 16px */
+    line-height: 1.6;
+    /* Sets the line-height to 1.6 */
+
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    text-align: center;
+    margin: 0 auto;
+}
+
+/* 5 || Headings */
+h1 {
+    font-size: 30px;
+    font-weight: 500;
+}
+
+h2 {
+    font-size: 24px;
+    font-weight: 500;
+}
+
+h3 {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+/* 6 || Lists */
+/* 7 || Media */
+
+/* 8 || Forms */
+.button,
+button {
+    /* overwrites browser defaults */
+    /* resets the border */
+    border: none;
+    display: inline-block;
+    /* takes the font from the outer container */
+    font-family: inherit;
+    /* style button */
+    background-color: var(--dark);
+    border-radius: 3px;
+    color: white;
+    padding: 10px;
+    text-decoration: none;
+    /* width of the border, type, color */
+    border-bottom: 2px solid rgba(0, 0, 0, 0.3);
+    transition: 1s opacity;
+}
+
+button:hover,
+button:focus,
+.button:hover,
+.button:focus {
+    /* lets the mouse appear as a hand when hovering over the button */
+    cursor: pointer;
+    /* reduces the opacity of the button to 75% */
+    opacity: 0.75;
+}
+
+/* 9 || Tables */
+
+/* 10 || Phrasing */
+a {
+    color: var(--secondary-trim);
+    /* No underlining when hovering over a link */
+    text-decoration: none;
+}
+
+a:hover {
+    background: var(--primary-accent);
+    color: black;
+}
+
+/* 11 || Misc. */
+
+/*12 || Attributes */
+/* Section || Page Header*/
+.page-header {
+    display: flex;
+    width: 100%;
+    padding: 20px;
+}
+
+.page-header__item {
+    flex: 0 1 200px;
+}
+
+.page-header__item:last-child {
+    flex-grow: 1;
+    text-align: right;
+}
+
+/* Page Header || Navigation*/
+.page-header {
+    background-color: var(--dark);
+    color: white;
+}
+
+.navigation-list {
+    list-style-type: none;
+}
+
+.navigation-list li {
+    display: inline-block;
+    margin-left: 15px;
+}
+
+.navlink {
+    font-size: 24px;
+}
+
+/* Section || Body */
+.content {
+    flex: 1 0 auto;
+}
+
+/* Section || Footer */
+.page-footer {
+    clear: both;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    flex-shrink: 0;
+}
+
+/* Main || Portrait */
+.profile_portrait {
+    float: left;
+    width: 250px;
+    margin-right: 40px;
+    border-radius: 50%;
+}
+
+/* Main || Experience Table */
+.experience {
+    text-align: center;
+    margin: 0 auto;
+}
+
+.experience-table {
+    margin: 0px auto;
+    width: 25%;
+}
+
+.profile-main {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* Main || Grids*/
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 20px;
+
+    text-align: center;
+}
+
+/* start grid fallback */
+.grid__item {
+    display: inline-block;
+    width: 33%;
+}
+
+.grid__item {
+    background-color: var(--medium);
+    border-radius: 30px;
+    opacity: 100%;
+    width: auto;
+    min-height: auto;
+    margin: 0;
+}
+
+.grid__item:last-child {
+    grid-column: 3 / 3;
+    grid-row: 1 / 3;
+}
+
+/* Base || Media */
+@media all and (max-width: 500px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+}
+@media all and (min-width: 500px) and (max-width: 750px) {
+    .grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+@media all and (max-width: 750px) {
+    .grid {
+        grid-gap: 10px;
+    }
+    .grid__item:last-child {
+        grid-column: auto / auto;
+        grid-row: auto / auto;
+    }
+    h1 {
+        font-size: 22px;
+    }
+}

@@ -7,12 +7,15 @@ general = Blueprint("general", __name__)
 def index():
     return render_template("index.html")
 
+@general.route("/work")
+def work():
+    return render_template("work.html")
 
-@general.route("/characters/")
-def characters():
-    return render_template("characters.html")
+@general.route("/about")
+def about():
+    return render_template("about.html")
 
 
-@general.route("/decrypt/")
-def decrypt():
-    return render_template("decrypt.html")
+@general.route("/contact")
+def contact():
+    return render_template("contact.html")

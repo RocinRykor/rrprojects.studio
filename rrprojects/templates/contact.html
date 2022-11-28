@@ -1,0 +1,59 @@
+{% extends "partials/base.html" %} {% block main %}
+
+<main class="contact-main">
+    <section>
+        <h1>Contact Me!</h1>
+        <p>
+            Email:
+            <a href="mailto:briggs.steven369@gmail.com"
+                >Briggs.Steven369@gmail.com</a
+            >
+        </p>
+        <p>
+            Telephone:
+            <a
+                href="tel:9716002201"
+                aria-label="Nine. Seven. One. Six. Zero. Zero. Two. Two. Zero. One"
+                >(971) 600-2201</a
+            >
+        </p>
+    </section>
+    <section>
+        <h3>Send Me A Quick Message!</h3>
+        <form action="" method="post">
+            <label class="standard-label" for="contact-name">* Name:</label>
+            <input type="text" id="contact-name" required />
+
+            <br />
+            <label class="standard-label" for="contact-telephone"
+                >Telephone:
+            </label>
+            <input
+                type="tel"
+                pattern="\d{3}[\-]\d{3}[\-]\d{4}"
+                id="contact-telephone" />
+
+            <br />
+            <label class="standard-label" for="contact-email">* Email:</label>
+            <input type="email" id="contact-email" required />
+
+            <br />
+            <label class="standard-label" for="contact-message"
+                >* Message:
+            </label>
+            <textarea
+                name="messageArea"
+                cols="30"
+                rows="10"
+                minlength="50"
+                maxlength="300"
+                id="contact-message"></textarea>
+
+            <input type="submit" value="Send Message" required />
+
+            <p>* = Required</p>
+        </form>
+    </section>
+</main>
+
+{% endblock %}
