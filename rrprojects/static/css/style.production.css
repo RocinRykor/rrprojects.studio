@@ -1,16 +1,4 @@
 /* 1 || Universal*/
-:root {
-    /* Steel Blue Palette */
-    --dark: #1b3246;
-    --medium: #4682b4;
-    --light: #b2cce1;
-
-    --primary-accent: #b4af46;
-    --secondary-accent: #b4464b;
-
-    --base-font-size: 18px;
-    --large-font-size: 24px;
-}
 
 * {
     box-sizing: border-box;
@@ -27,14 +15,12 @@ body {
 body {
     /* Base || Colors*/
     background-color: #b2cce1;
-    background-color: var(--light);
     color: black;
 
     /* || Fonts*/
     font-family: "Dosis", sans-serif;
     font-weight: 300;
     font-size: 18px;
-    font-size: var(--base-font-size);
     line-height: 1.6;
 
     display: flex;
@@ -75,7 +61,6 @@ h3 {
     font-family: inherit;
     /* style button */
     background-color: #1b3246;
-    background-color: var(--dark);
     border-radius: 3px;
     color: white;
     padding: 10px;
@@ -93,7 +78,6 @@ button {
     font-family: inherit;
     /* style button */
     background-color: #1b3246;
-    background-color: var(--dark);
     border-radius: 3px;
     color: white;
     padding: 10px;
@@ -117,15 +101,13 @@ button:focus,
 
 /* 10 || Phrasing */
 a {
-    color: undefined;
-    color: var(--secondary-trim);
+    color: #b4464b;
     /* No underlining when hovering over a link */
     text-decoration: none;
 }
 
 a:hover {
     background: #b4af46;
-    background: var(--primary-accent);
     color: black;
 }
 
@@ -151,7 +133,6 @@ a:hover {
 /* Page Header || Navigation*/
 .page-header {
     background-color: #1b3246;
-    background-color: var(--dark);
     color: white;
 }
 
@@ -166,7 +147,6 @@ a:hover {
 
 .navlink {
     font-size: 24px;
-    font-size: var(--large-font-size);
 }
 
 /* Section || Body */
@@ -224,7 +204,6 @@ a:hover {
 
 .grid__item {
     background-color: #4682b4;
-    background-color: var(--medium);
     border-radius: 30px;
     opacity: 100%;
     width: auto;
