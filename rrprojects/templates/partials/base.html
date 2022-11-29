@@ -3,11 +3,11 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>RRProjects Studio</title>
+        <title>{{title}}</title>
         <link
             rel="icon"
             type="image/png"
-            href="./img/favicon/favicon-32x32.png"
+            href="{{url_for('static', filename='/img/favicon/favicon-32x32.png')}}"
             sizes="32x32" />
         <link
             rel="stylesheet"
@@ -22,7 +22,7 @@
             rel="stylesheet" />
         <link
             rel="stylesheet"
-            href="{{url_for('static', filename='css/styles.css')}}" />
+            href="{{url_for('static', filename='css/style.production.css')}}" />
     </head>
 
     {% include "partials/header.html" %}
