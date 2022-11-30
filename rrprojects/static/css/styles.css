@@ -115,6 +115,7 @@ a:hover {
     color: white;
     display: flex;
     width: 100%;
+    padding: 0px 25px 0px 25px;
 }
 
 .page-header__item {
@@ -185,6 +186,7 @@ a:hover {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 20px;
+    padding: 0px 25px 0px 25px;
 
     text-align: center;
 }
@@ -202,6 +204,9 @@ a:hover {
     width: auto;
     min-height: auto;
     margin: 0;
+
+    /* Start styling */
+    border: 2px solid rgba(0, 0, 0, 0.3);
 }
 
 .grid-link {

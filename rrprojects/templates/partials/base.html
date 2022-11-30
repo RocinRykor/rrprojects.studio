@@ -20,9 +20,11 @@
         <link
             href="https://fonts.googleapis.com/css2?family=Dosis:wght@200;300;400;500;600;700;800&family=PT+Serif:wght@400;700&display=swap"
             rel="stylesheet" />
+            <!-- Production = href="{{url_for('static', filename='css/style.production.css')}}" -->
+            <!-- Development = href="{{url_for('static', filename='css/styles.css')}}" -->
         <link
             rel="stylesheet"
-            href="{{url_for('static', filename='css/style.production.css')}}" />
+            href="{{url_for('static', filename='css/styles.css')}}" />
     </head>
 
     {% include "partials/header.html" %}
