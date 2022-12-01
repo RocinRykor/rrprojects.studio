@@ -19,42 +19,49 @@
             >
         </p>
     </section>
-    <section>
-        <h3>Send Me A Quick Message!</h3>
-        <form action="" method="post">
-            <label class="standard-label" for="contact-name">* Name:</label>
-            <input type="text" id="contact-name" required />
-
+    <div class="contact-section">
+        <h3>Send Me A Quick Message! (WIP)</h3>
+        <form class="contact-form" action="" method="post">
+            <div class="contact-form__item">
+                <label class="contact-label" for="contact-name">* Name:</label
+                ><br />
+                <input type="text" id="contact-name" required />
+            </div>
             <br />
-            <label class="standard-label" for="contact-telephone"
-                >Telephone:
-            </label>
-            <input
-                type="tel"
-                pattern="\d{3}[\-]\d{3}[\-]\d{4}"
-                id="contact-telephone" />
-
+            <div class="contact-form__item">
+                <label class="contact-label" for="contact-telephone"
+                    >Telephone: </label
+                ><br />
+                <input
+                    type="tel"
+                    pattern="\d{3}[\-]\d{3}[\-]\d{4}"
+                    id="contact-telephone" />
+            </div>
             <br />
-            <label class="standard-label" for="contact-email">* Email:</label>
-            <input type="email" id="contact-email" required />
-
+            <div class="contact-form__item">
+                <label class="contact-label" for="contact-email">* Email:</label
+                ><br />
+                <input type="email" id="contact-email" required />
+            </div>
             <br />
-            <label class="standard-label" for="contact-message"
-                >* Message:
-            </label>
-            <textarea
-                name="messageArea"
-                cols="30"
-                rows="10"
-                minlength="50"
-                maxlength="300"
-                id="contact-message"></textarea>
-
-            <input type="submit" value="Send Message" required />
+            <div class="contact-form__item">
+                <label class="contact-label" for="contact-message"
+                    >* Message: </label
+                ><br />
+                <textarea
+                    name="messageArea"
+                    cols="30"
+                    rows="10"
+                    minlength="50"
+                    maxlength="300"
+                    id="contact-message"></textarea
+                ><br />
+                <input type="submit" value="Send Message" required />
+            </div>
 
             <p>* = Required</p>
         </form>
-    </section>
+    </div>
 </main>
 
 {% endblock %}

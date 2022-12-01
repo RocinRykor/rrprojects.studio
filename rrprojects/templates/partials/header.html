@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <header class="page-header">
-    <h1 class="main_title">STEVEN BRIGGS</h1>
+    <h1 class="main_title">
+        <a href="/" class="navlink" role="menuitem" title="Return Home"
+            >STEVEN BRIGGS</a
+        >
+    </h1>
     <nav class="main-navigation page-header__item">
         <ul role="menubar" class="navigation-list">
             <li role="presentation">
@@ -17,15 +21,16 @@
                     >Work</a
                 >
             </li>
-            <li>
+            <li role="presentation">
                 <div class="dropdown">
-                    <button class="button-dropdown">Projects</button>
+                    <button class="button-dropdown">Projects &gt;</button>
                     <div class="dropdown-content">
-                        <a href="/" class="navlink" title="First Project"
-                            >Project 1</a
-                        >
-                        <a href="/" class="navlink" title="Second Project"
-                            >Project 2</a
+                        <a
+                            href="/testing"
+                            class="navlink"
+                            role="menuitem"
+                            title="JavaScript Testing Grounds"
+                            >JS Testing</a
                         >
                     </div>
                 </div>

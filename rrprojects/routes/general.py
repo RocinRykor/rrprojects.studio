@@ -14,7 +14,6 @@ def work():
 def about():
     return render_template("about.html", title="About Steven")
 
-
 @general.route("/contact")
 def contact():
     return render_template("contact.html", title="Contact Steven")
@@ -22,3 +21,7 @@ def contact():
 @general.route("/error")
 def error_page():
     return render_template("error.html", title="404 - Page Not Found!")
+
+@general.route("/testing")
+def testing():
+    return render_template("testing.html", title="JavaScript Testing Grounds")
