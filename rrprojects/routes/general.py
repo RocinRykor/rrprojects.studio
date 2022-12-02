@@ -2,6 +2,11 @@ from flask import render_template, Blueprint  # , redirect, session, request
 
 general = Blueprint("general", __name__)
 
+
+@general.app_errorhandler(404)
+def custom_error_page(e):
+    return render_template("error.html", title="404 - Page Not Found!")
+
 @general.route("/")
 def index():
     return render_template("index.html", title="Portfolio Site")
@@ -17,10 +22,6 @@ def about():
 @general.route("/contact")
 def contact():
     return render_template("contact.html", title="Contact Steven")
-
-@general.route("/error")
-def error_page():
-    return render_template("error.html", title="404 - Page Not Found!")
 
 @general.route("/testing")
 def testing():
