@@ -106,6 +106,12 @@ a:hover {
     color: black;
 }
 
+.navlink:hover {
+    border-top: 2px solid var(--primary-accent);
+    color: var(--light);
+    background: none;
+  }
+
 /* 11 || Misc. */
 
 /*12 || Attributes */
