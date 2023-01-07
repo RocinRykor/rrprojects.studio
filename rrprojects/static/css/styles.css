@@ -27,7 +27,7 @@ body {
     color: black;
 
     /* || Fonts*/
-    font-family: "Dosis", sans-serif;
+    font-family: 'Dosis', sans-serif;
     font-weight: 300;
     font-size: 18px;
     /* Sets the font size to 16px */
@@ -102,7 +102,7 @@ a {
 }
 
 a:hover {
-    background: var(--primary-accent);
+    /* background: var(--primary-accent); */
     color: black;
 }
 
@@ -110,7 +110,7 @@ a:hover {
     border-top: 2px solid var(--primary-accent);
     color: var(--light);
     background: none;
-  }
+}
 
 /* 11 || Misc. */
 

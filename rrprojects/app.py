@@ -1,14 +1,26 @@
-from config import Config
-from flask import Flask, Request
+from .config import Config
+from . import models
+from flask import Flask, redirect
+from flask_login import LoginManager
 from flask_migrate import Migrate
-from routes.general import general
-from routes.admin import admin
-from models import db
-# from flask_statistics import Statistics
 
+db = models.db
+
+# Create any items that will be used in the app
+User = models.User
+Project = models.Project
 
 migrate = Migrate()
-# statistics = Statistics()
+login_manager = LoginManager()
+
+@login_manager.user_loader
+def load_user(user_id):
+    return models.User.query.filter_by(id=user_id).first()
+
+
+@login_manager.unauthorized_handler
+def unauthorized_callback():
+    return redirect('/login/')
 
 
 def check_user():
@@ -24,11 +36,24 @@ def build_app():
 
     app = Flask(__name__)
     app.config.from_object(Config())
-    app.register_blueprint(general)
-    app.register_blueprint(admin)
     db.init_app(app)
     migrate.init_app(app, db)
-    # statistics.init_app(app, db, Request, check_user)
+    login_manager.init_app(app, db)
+
+    with app.app_context():
+        # Base Routes
+        from .routes.general import general
+        #from .routes.auth import auth
+
+        #API Routes
+        
+        app.register_blueprint(general)
+        #app.register_blueprint(auth)
+
+
+        print("Creating")
+        db.create_all()
+        print("done")
 
     return app
 
