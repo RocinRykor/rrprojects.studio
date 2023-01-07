@@ -34,12 +34,12 @@ def build_app():
     with app.app_context():
         # Base Routes
         from .routes.general import general
-        #from .routes.auth import auth
+        from .routes.auth import auth
 
         #API Routes
         
         app.register_blueprint(general)
-        #app.register_blueprint(auth)
+        app.register_blueprint(auth)
 
 
         print("Creating")
