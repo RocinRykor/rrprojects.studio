@@ -11,3 +11,12 @@ class LoginForm(FlaskForm):
     password = PasswordField("Password", validators=[InputRequired(),
                                                      Length(min=12)])
     submit = SubmitField("Login")
+
+class ProjectForm(FlaskForm):
+    title = StringField("Title", validators=[InputRequired(), Length(max=64)])
+    repo_link = StringField("GitHub URL", validators=[InputRequired(), Length(max=256)])
+    live_link = StringField("Live URL", validators=[InputRequired(), Length(max=256)])
+    description = TextAreaField("Description", validators=[InputRequired(), Length(max=8192)])
+    portrait_filename = StringField("Portrait filename", validators=[InputRequired(), Length(max=128)])
+
+    submit = SubmitField("Add Project")   
