@@ -23,15 +23,6 @@ def unauthorized_callback():
     return redirect('/login/')
 
 
-def check_user():
-    """
-    A function that can be used to do some form of authentication for user
-    login to view the statistics page. Currently this just returns True,
-    which is no check at all, but you can add this in later.
-    """
-    return True
-
-
 def build_app():
 
     app = Flask(__name__)
