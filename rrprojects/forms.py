@@ -17,6 +17,6 @@ class ProjectForm(FlaskForm):
     repo_link = StringField("GitHub URL", validators=[InputRequired(), Length(max=256)])
     live_link = StringField("Live URL", validators=[InputRequired(), Length(max=256)])
     description = TextAreaField("Description", validators=[InputRequired(), Length(max=8192)])
-    portrait_filename = StringField("Portrait filename", validators=[InputRequired(), Length(max=128)])
+    img_filename = StringField("Project IMG", validators=[InputRequired(), Length(max=128)])
 
     submit = SubmitField("Add Project")   

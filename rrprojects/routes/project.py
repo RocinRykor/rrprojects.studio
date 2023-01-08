@@ -1,6 +1,6 @@
 from flask import render_template, Blueprint, redirect, request
 from flask_login import login_required, current_user
-from rrprojects.app import db, User
+from rrprojects.app import db, User, Project
 from rrprojects.forms import ProjectForm
 
 project = Blueprint("project", __name__, url_prefix="/project")
@@ -25,9 +25,9 @@ def finish_add_project():
     repo_link = form.repo_link.data
     live_link = form.live_link.data
     description = form.description.data
-    portrait_filename = form.portrait_filename.data
+    img_filename = form.img_filename.data
 
-    project = Project(title=title, repo_link=repo_link, live_link=live_link, description=description, portrait_filename=portrait_filename)
+    project = Project(title=title, repo_link=repo_link, live_link=live_link, description=description, img_filename=img_filename)
 
     db.session.add(project)
     db.session.commit()
