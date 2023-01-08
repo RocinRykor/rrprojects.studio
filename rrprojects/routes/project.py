@@ -3,7 +3,7 @@ from flask_login import login_required, current_user
 from rrprojects.app import db, User, Project
 from rrprojects.forms import ProjectForm
 from rrprojects.routes.api.projects import projects_api
-from rrprojects.utils import replace_bbcode
+from rrprojects.utils import replace_bbcode, replace_markdown
 
 project = Blueprint("project", __name__, url_prefix="/project")
 
@@ -13,7 +13,7 @@ def projects():
     return render_template("public/projects/projects.html", 
                             title="Steven's Projects", 
                             projects=projects, 
-                            replace_func=replace_bbcode)
+                            replace_func=replace_markdown)
 
 @login_required
 @project.route("/add", methods=["GET"])
