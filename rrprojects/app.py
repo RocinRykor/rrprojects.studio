@@ -37,11 +37,14 @@ def build_app():
         from .routes.auth import auth
         from .routes.project import project
 
-        #API Routes
-        
         app.register_blueprint(general)
         app.register_blueprint(auth)
         app.register_blueprint(project)
+
+        #API Routes
+        from .routes.api.projects.project_api_routes import project_api
+
+        app.register_blueprint(project_api)
 
 
         print("Creating")
