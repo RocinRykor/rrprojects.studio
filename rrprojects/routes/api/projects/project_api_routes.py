@@ -45,4 +45,4 @@ def get_all_projects():
     print(projects)
 
     projects = [project.jsonify() for project in projects]
-    return {"projects": projects}
+    return projects
