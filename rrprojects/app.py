@@ -43,9 +43,10 @@ def build_app():
 
         #API Routes
         from .routes.api.projects.project_api_routes import project_api
-
+        from .routes.api.users.user_api_routes import user_api
+        
         app.register_blueprint(project_api)
-
+        app.register_blueprint(user_api)
 
         print("Creating")
         db.create_all()

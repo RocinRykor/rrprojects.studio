@@ -72,7 +72,7 @@ class Project(db.Model):
         -> JSON Object
         """
 
-        return {
+        output = {
             "id": self.id,
             "title": self.title,
             "repo_link": self.repo_link,
@@ -80,3 +80,7 @@ class Project(db.Model):
             "description": self.description,
             "img_filename": self.img_filename,
         }
+
+        print(output)
+
+        return output

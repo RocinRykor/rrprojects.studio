@@ -41,5 +41,8 @@ def get_project(project_id):
 @project_api.route("/all", methods=["GET"])
 def get_all_projects():
     projects = projects_api.get_all()
+
+    print(projects)
+
     projects = [project.jsonify() for project in projects]
     return projects

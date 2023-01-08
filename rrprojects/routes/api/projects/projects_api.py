@@ -43,6 +43,7 @@ def get_all():
     -> project(s) JSON
     """
     projects = Project.query.all()
+    print(projects)
     return projects
 
 def random_project():
