@@ -7,6 +7,8 @@
 
     --primary-accent: #b4af46;
     --secondary-accent: #b4464b;
+
+    --default-border-radius: 25px;
 }
 
 * {
@@ -272,9 +274,36 @@ a:hover {
     color: white;
 }
 
-.grid__item:last-child {
-    grid-column: 3 / 3;
-    grid-row: 1 / 3;
+.project-image,
+.project-image-xs,
+.project-image-sm,
+.project-image-lg {
+    border-radius: var(--default-border-radius);
+    border: 1px solid lightgray;
+}
+
+.project-image-lg {
+    /* Full Size Image*/
+    height: 500px;
+    width: 500px;
+}
+
+.project-image {
+    /* 75% Size */
+    height: 375px;
+    width: 375px;
+}
+
+.project-image-sm {
+    /* 50% Size */
+    height: 250px;
+    width: 250px;
+}
+
+.project-image-xs {
+    /* 25% Size */
+    height: 125px;
+    width: 125px;
 }
 
 /* Base || Media */

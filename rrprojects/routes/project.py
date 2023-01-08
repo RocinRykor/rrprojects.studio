@@ -2,13 +2,18 @@ from flask import render_template, Blueprint, redirect, request
 from flask_login import login_required, current_user
 from rrprojects.app import db, User, Project
 from rrprojects.forms import ProjectForm
+from rrprojects.routes.api.projects import projects_api
+from rrprojects.utils import replace_bbcode
 
 project = Blueprint("project", __name__, url_prefix="/project")
 
 @project.route("/")
 def projects():
-    #get projects
-    return render_template("public/projects/projects.html", title="Steven's Projects")#, projects=projects
+    projects = projects_api.get_all()
+    return render_template("public/projects/projects.html", 
+                            title="Steven's Projects", 
+                            projects=projects, 
+                            replace_func=replace_bbcode)
 
 @login_required
 @project.route("/add", methods=["GET"])

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+
+<div class="grid__item">
+    <h2>{{project.title}}</h2>
+    <img
+        src="/static/img/projects/{{project['img_filename']}}"
+        alt="{{project.title}} Image"
+        class="project-image-sm" />
+    <p>{{replace_func(project.description) | safe}}</p>
+    <a href="{{project.live_link}}" class="grid-link"
+        >View the live version here!</a
+    >
+    <br />
+    <a href="{{project.repo_link}}" class="grid-link"
+        >Check out the project on GitHub!</a
+    >
+</div>
