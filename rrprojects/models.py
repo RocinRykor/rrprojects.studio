@@ -84,3 +84,38 @@ class Project(db.Model):
         print(output)
 
         return output
+
+class BlogPost(db.Model):
+    """
+    A model representing a blog post.
+    | id:            The primary key for the blog post
+    | title:         A string containing the title of the blog post
+    | content:       A string containing the content of the blog post
+    | author_id:     An integer representing the user who wrote the blog post
+    | author:        A relationship to the user who wrote the blog post
+    | created_at:    A datetime object representing the date and time the blog post was created
+    | updated_at:    A datetime object representing the date and time the blog post was last updated
+    """
+
+    id = db.Column(db.Integer, primary_key=True)
+    title = db.Column(db.String(255), nullable=False)
+    content = db.Column(db.Text, nullable=False)
+    author_id = db.Column(db.Integer, ForeignKey('users.id'), nullable=False)
+    author = db.relationship('User', back_populates='blog_posts')
+    created_at = db.Column(db.DateTime, nullable=False)
+    updated_at = db.Column(db.DateTime, nullable=False)
+
+    def jsonify(self):
+        """
+        Returns the blog post as a JSON object.
+
+        -> JSON object
+        """
+        return {
+            "id": self.id,
+            "title": self.title,
+            "content": self.content,
+            "author_id": self.author_id,
+            "created_at": self.created_at,
+            "updated_at": self.updated_at
+        }
