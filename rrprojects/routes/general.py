@@ -11,10 +11,6 @@ def custom_error_page(e):
 def index():
     return render_template("public/index.html", title="Portfolio Site")
 
-@general.route("/work")
-def work():
-    return render_template("public/work.html", title="Steven's Projects")
-
 @general.route("/about")
 def about():
     return render_template("public/about.html", title="About Steven")

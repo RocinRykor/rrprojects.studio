@@ -10,6 +10,7 @@ class User(db.Model, UserMixin):
     | password:      A password hashed with werkzeug.generate_password_hash
     | is_admin:      A boolean determining whether or not the user is an admin
     | authenticated: Whether or not the user has logged in.
+    | blog_posts:    Relationship to the blog posts the user has written
     """
 
     id = db.Column(db.Integer, primary_key=True)
@@ -17,6 +18,7 @@ class User(db.Model, UserMixin):
     password_hash = db.Column(db.String(128))
     is_admin = db.Column(db.Boolean, default=False)
     authenticated = db.Column(db.Boolean, default=False)
+    blog_posts = db.relationship("BlogPost", back_populates="author")
 
     def is_authenticated(self):
         return self.authenticated
