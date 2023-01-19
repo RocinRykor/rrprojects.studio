@@ -97,6 +97,7 @@ class BlogPost(db.Model):
     | author:        A relationship to the user who wrote the blog post
     | created_at:    A datetime object representing the date and time the blog post was created
     | updated_at:    A datetime object representing the date and time the blog post was last updated
+    | is_private:    Whether or not the blog post will be marked as private (won't be viewable anyone not logged in)
     """
 
     id = db.Column(db.Integer, primary_key=True)
@@ -106,6 +107,7 @@ class BlogPost(db.Model):
     author = db.relationship('User', back_populates='blog_posts')
     created_at = db.Column(db.DateTime, nullable=False)
     updated_at = db.Column(db.DateTime, nullable=False)
+    is_private = db.Column(db.Boolean)
 
     def jsonify(self):
         """
