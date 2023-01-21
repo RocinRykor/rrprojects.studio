@@ -6,12 +6,15 @@
         src="/static/img/projects/{{project['img_filename']}}"
         alt="{{project.title}} Image"
         class="project-image-sm" />
-    <p>{{replace_func(project.description) | safe}}</p>
+    <p>{{replace_func(project.short_description) | safe}}</p>
+
+    <a href="{{project.title}}" class="grid-link">Click here to learn more!</a>
+    <br />
     <a href="{{project.live_link}}" class="grid-link"
-        >View the live version here!</a
+        >{{project.live_link_description}}</a
     >
     <br />
     <a href="{{project.repo_link}}" class="grid-link"
-        >Check out the project on GitHub!</a
+        >{{project.repo_link_description}}</a
     >
 </div>

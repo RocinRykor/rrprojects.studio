@@ -87,7 +87,7 @@ class Project(db.Model):
             "repo_link_description": self.repo_link_description,
             "live_link": self.live_link,
             "live_link_description": self.live_link_description,
-            "short_description": self.short_description
+            "short_description": self.short_description,
             "description": self.description,
             "img_filename": self.img_filename,
         }

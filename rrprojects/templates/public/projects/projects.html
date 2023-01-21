@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 {% extends "public/partials/base.html" %} {% block main %}
-
-<h1>My Projects!</h1>
-{% if current_user.is_admin %}
-<a href="{{url_for('project.get_add_project')}}" class="btn btn-secondary"
-    >Submit New Project</a
->{% endif %}
+<div class="centered">
+    <h1>My Projects!</h1>
+    {% if current_user.is_admin %}
+    <a href="{{url_for('project.get_add_project')}}" class="btn btn-secondary"
+        >Submit New Project</a
+    >{% endif %}
+</div>
 
 <div class="project-list grid">
     {% for project in projects %} {% with project=project %} {% include

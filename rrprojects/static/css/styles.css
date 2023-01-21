@@ -41,7 +41,6 @@ body {
 }
 
 main {
-    text-align: center;
     margin: 0 auto;
 }
 
@@ -207,6 +206,10 @@ a:hover {
 /* Section || Body */
 .content {
     flex: 1 0 auto;
+}
+
+.centered {
+    text-align: center;
 }
 
 /* Section || Footer */

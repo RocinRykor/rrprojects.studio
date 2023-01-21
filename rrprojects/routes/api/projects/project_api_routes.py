@@ -21,6 +21,8 @@ def create_project():
     -> JSON Dict
     """
 
+    
+
     project = projects_api.create_project(request.json)
     return project.jsonify(), 200
 

@@ -14,7 +14,10 @@ def create_project(project_json):
     -> Project
     """
 
-    project = project = Project(title=title, repo_link=repo_link, live_link=live_link, description=description, img_filename=img_filename)
+    project = Project(title=title, repo_link=repo_link, repo_link_description=repo_link_description, 
+                                    live_link=live_link, live_link_description=live_link_description, 
+                                    short_description=short_description, description=description, 
+                                    img_filename=img_filename)
 
     db.session.add(project)
     db.session.commit()
@@ -33,6 +36,21 @@ def get_project(project_id):
     """
 
     project = Project.query.filter_by(id=project_id).first()
+    
+    return project
+
+def get_project_by_name(project_name):
+    """
+    Gets a single project from the database specified by the project_id
+
+    Parameters:
+    ===========
+    project_id: int
+
+    -> Project or None
+    """
+
+    project = Project.query.filter_by(title=project_name).first()
     
     return project
 
