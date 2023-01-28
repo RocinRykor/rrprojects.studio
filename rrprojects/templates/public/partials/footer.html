@@ -1,35 +1,35 @@
 <!DOCTYPE html>
 <footer class="page-footer">
-    <p>Find me on</p>
-    <section class="social-media">
-        <a href="https://github.com/RocinRykor" target="_blank"
-            ><img
-                src="{{url_for('static', filename='img/svg/github.svg')}}"
-                alt="Link to Steven's Github page"
-                sizes="32x32"
-        /></a>
-        <a href="https://twitter.com/RocinRykor" target="_blank"
-            ><img
-                src="{{url_for('static', filename='img/svg/twitter.svg')}}"
-                alt="Link to Steven's Twitter Page"
-                sizes="32x32"
-        /></a>
-        <a href="https://www.linkedin.com/in/stevenbriggs369/" target="_blank"
-            ><img
-                src="{{url_for('static', filename='img/svg/linkedin.svg')}}"
-                alt="Link to Steven's LinkedIn profile"
-                sizes="32x32"
-        /></a>
-    </section>
-    <p>
-        © Steven Briggs 2023 |
-        <!-- User -->
-        {% if current_user.is_authenticated %}
-        <a href="/logout"> {{current_user.username}} </a>
-        {% else %}
-        <a href="/login" title="Login User"> Admin Login </a>
-        {% endif %}
+	<p>Find me on</p>
+	<section class="social-media">
+		<a href="https://github.com/RocinRykor" target="_blank"
+			><img
+				src="{{url_for('static', filename='img/svg/github.svg')}}"
+				alt="Link to Steven's Github page"
+				sizes="32x32"
+		/></a>
+		<a href="https://twitter.com/RocinRykor" target="_blank"
+			><img
+				src="{{url_for('static', filename='img/svg/twitter.svg')}}"
+				alt="Link to Steven's Twitter Page"
+				sizes="32x32"
+		/></a>
+		<a href="https://www.linkedin.com/in/stevenbriggs369/" target="_blank"
+			><img
+				src="{{url_for('static', filename='img/svg/linkedin.svg')}}"
+				alt="Link to Steven's LinkedIn profile"
+				sizes="32x32"
+		/></a>
+	</section>
+	<p>
+		© Steven Briggs 2023 |
+		<!-- User -->
+		{% if current_user.is_authenticated %}
+		<a href="/logout"> {{current_user.username}} </a>
+		{% else %}
+		<a href="/login" title="Login User"> Admin Login </a>
+		{% endif %}
 
-        <!-- End User -->
-    </p>
+		<!-- End User -->
+	</p>
 </footer>
