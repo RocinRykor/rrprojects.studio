@@ -1,15 +1,16 @@
-from flask_sqlalchemy import SQLAlchemy
 from flask_login import UserMixin
+from flask_sqlalchemy import SQLAlchemy
 
 db = SQLAlchemy()
+
 
 class User(db.Model, UserMixin):
     """
     | id:            The primary key for the user
     | username:      A string containing the user's login name
     | password:      A password hashed with werkzeug.generate_password_hash
-    | is_admin:      A boolean determining whether or not the user is an admin
-    | authenticated: Whether or not the user has logged in.
+    | is_admin:      A boolean determining whether the user is an admin
+    | authenticated: Whether the user has logged in.
     | blog_posts:    Relationship to the blog posts the user has written
     """
 
@@ -36,7 +37,7 @@ class User(db.Model, UserMixin):
 
     def set_password(self, to_set):
         self.password_hash = generate_password_hash(to_set, method='pbkdf2:sha256',
-                                               salt_length=24)
+                                                    salt_length=24)
 
     def jsonify(self):
         """
@@ -48,18 +49,19 @@ class User(db.Model, UserMixin):
         return {
             "id": self.id,
             "username": self.username,
-          }
+        }
+
 
 class Project(db.Model):
     """
     | id:                       The primary key for the project
     | title:                    A string for the name of the project
-    | repo_link:                URL to the github repository for the project
+    | repo_link:                URL to the GitHub repository for the project
     | repo_link_description:    Text to accompany the repo link to allow customization
-    | live_link:                URL to the active page for the project (such as Github Pages)
+    | live_link:                URL to the active page for the project (such as GitHub Pages)
     | live_link_description:    Text to accompany the live link to allow customization 
-    | short_description:        Shoty text desciprion for the project, shows on initial project card   
-    | description:              Large text desciprion for the project, shows on full project page
+    | short_description:        Short text description for the project, shows on initial project card
+    | description:              Large text description for the project, shows on full project page
     | img_filename:             Filename for an image representing the project 
     """
 
@@ -96,6 +98,7 @@ class Project(db.Model):
 
         return output
 
+
 class BlogPost(db.Model):
     """
     A model representing a blog post.
@@ -106,7 +109,7 @@ class BlogPost(db.Model):
     | author:        A relationship to the user who wrote the blog post
     | created_at:    A datetime object representing the date and time the blog post was created
     | updated_at:    A datetime object representing the date and time the blog post was last updated
-    | is_private:    Whether or not the blog post will be marked as private (won't be viewable anyone not logged in)
+    | is_private:    Whether the blog post will be marked as private (won't be viewable anyone not logged in)
     """
 
     id = db.Column(db.Integer, primary_key=True)

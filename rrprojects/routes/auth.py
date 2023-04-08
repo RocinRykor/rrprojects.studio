@@ -1,15 +1,13 @@
-from flask_login import login_user, current_user
-from flask import render_template, redirect, Blueprint, request, session, flash
-from werkzeug.security import check_password_hash
-from rrprojects.forms import LoginForm
-from rrprojects.app import db
-from rrprojects import models
-from werkzeug.security import check_password_hash
+from flask import render_template, redirect, Blueprint, request, flash
+from flask_login import current_user
 from flask_login import login_user, logout_user
+from werkzeug.security import check_password_hash
 
+from rrprojects import models
+from rrprojects.app import db
+from rrprojects.forms import LoginForm
 
 User = models.User
-
 
 auth = Blueprint("auth", __name__)
 
@@ -49,15 +47,16 @@ def login():
 @auth.route("/login/", methods=["GET"])
 def display_login():
     form = LoginForm()
-    return render_template("public/users/login.html", title="Admin Login", 
-                            form=form)
+    return render_template("public/users/login.html", title="Admin Login",
+                           form=form)
 
 
 @auth.route("/login-form/", methods=["GET"])
 def display_login_modal():
     form = LoginForm()
-    return render_template("public/users/partials/login_form.html", title="Admin Login", 
-                            form=form)
+    return render_template("public/users/partials/login_form.html", title="Admin Login",
+                           form=form)
+
 
 @auth.route("/logout/")
 def logout():

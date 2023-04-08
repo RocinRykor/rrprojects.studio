@@ -1,6 +1,7 @@
-from rrprojects.app import db, Project
-from flask_login import current_user
 from sqlalchemy import func
+
+from rrprojects.app import db, Project
+
 
 def create_project(project_json):
     """
@@ -14,15 +15,16 @@ def create_project(project_json):
     -> Project
     """
 
-    project = Project(title=title, repo_link=repo_link, repo_link_description=repo_link_description, 
-                                    live_link=live_link, live_link_description=live_link_description, 
-                                    short_description=short_description, description=description, 
-                                    img_filename=img_filename)
+    project = Project(title=title, repo_link=repo_link, repo_link_description=repo_link_description,
+                      live_link=live_link, live_link_description=live_link_description,
+                      short_description=short_description, description=description,
+                      img_filename=img_filename)
 
     db.session.add(project)
     db.session.commit()
 
     return project
+
 
 def get_project(project_id):
     """
@@ -36,8 +38,9 @@ def get_project(project_id):
     """
 
     project = Project.query.filter_by(id=project_id).first()
-    
+
     return project
+
 
 def get_project_by_name(project_name):
     """
@@ -51,8 +54,9 @@ def get_project_by_name(project_name):
     """
 
     project = Project.query.filter_by(title=project_name).first()
-    
+
     return project
+
 
 def get_all():
     """
@@ -63,6 +67,7 @@ def get_all():
     projects = Project.query.all()
     print(projects)
     return projects
+
 
 def random_project():
     """

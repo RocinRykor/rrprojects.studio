@@ -1,8 +1,9 @@
-from .config import Config
-from . import models
 from flask import Flask, redirect
 from flask_login import LoginManager
 from flask_migrate import Migrate
+
+from . import models
+from .config import Config
 
 db = models.db
 
@@ -12,6 +13,7 @@ Project = models.Project
 
 migrate = Migrate()
 login_manager = LoginManager()
+
 
 @login_manager.user_loader
 def load_user(user_id):
@@ -24,7 +26,6 @@ def unauthorized_callback():
 
 
 def build_app():
-
     app = Flask(__name__)
     app.config.from_object(Config())
     db.init_app(app)
@@ -41,10 +42,10 @@ def build_app():
         app.register_blueprint(auth)
         app.register_blueprint(project)
 
-        #API Routes
+        # API Routes
         from .routes.api.projects.project_api_routes import project_api
         from .routes.api.users.user_api_routes import user_api
-        
+
         app.register_blueprint(project_api)
         app.register_blueprint(user_api)
 
@@ -56,7 +57,6 @@ def build_app():
 
 
 application = build_app()
-
 
 if __name__ == "__main__":
     application.run(debug=True, host="0.0.0.0")

@@ -20,6 +20,7 @@ html,
 body {
     height: 100%;
 }
+
 /* 3 || Metadata */
 
 /* 4 || Sections */
@@ -315,19 +316,23 @@ a:hover {
         grid-template-columns: 1fr;
     }
 }
+
 @media all and (min-width: 500px) and (max-width: 750px) {
     .grid {
         grid-template-columns: 1fr 1fr;
     }
 }
+
 @media all and (max-width: 750px) {
     .grid {
         grid-gap: 10px;
     }
+
     .grid__item:last-child {
         grid-column: auto / auto;
         grid-row: auto / auto;
     }
+
     h1 {
         font-size: 22px;
     }

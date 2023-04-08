@@ -1,6 +1,7 @@
 import random
 import re
 
+
 def replace_bbcode(text):
     bbcode = [
         r"\[b](.*?)\[/b]",
@@ -29,6 +30,7 @@ def replace_bbcode(text):
             text = re.sub(bbcode[i], replacement[i], text)
     text = text.replace("\n", "<br>")
     return text
+
 
 def replace_markdown(text):
     markdown = [
