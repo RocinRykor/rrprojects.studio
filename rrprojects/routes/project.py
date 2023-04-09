@@ -1,9 +1,10 @@
+import json
+
 from flask import render_template, Blueprint, request
 from flask_login import login_required
 
 from rrprojects.app import db, Project
 from rrprojects.forms import ProjectForm
-from rrprojects.routes.api.projects import projects_api
 from rrprojects.utils import replace_markdown
 
 project = Blueprint("project", __name__, url_prefix="/project")
@@ -11,21 +12,27 @@ project = Blueprint("project", __name__, url_prefix="/project")
 
 @project.route("/")
 def projects():
-    projects = projects_api.get_all()
+    with open('rrprojects/static/json/projects.json') as f:
+        projects_data = json.load(f)
+
     return render_template("public/projects/projects.html",
                            title="Steven's Projects",
-                           projects=projects,
+                           projects=projects_data,
                            replace_func=replace_markdown)
 
 
-@project.route("/<project_name>")
-def project_page(project_name):
-    project = projects_api.get_project_by_name(project_name)
+@project.route("/<int:id>")
+def project_details(id):
 
-    return render_template("public/projects/project_page.html", project=project,
-                           title=project_name,
-                           replace_func=replace_markdown)
+    with open('rrprojects/static/json/projects.json') as f:
+        projects_data = json.load(f)
 
+    for project in projects_data:
+        if project['id'] == id:
+            return render_template("public/projects/project_page.html",
+                                   title=project['title'],
+                                   project=project,
+                                   replace_func=replace_markdown)
 
 @login_required
 @project.route("/add", methods=["GET"])

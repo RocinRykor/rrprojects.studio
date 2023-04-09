@@ -1,20 +1,33 @@
 <!DOCTYPE html>
 
 <div class="grid__item">
-	<h2>{{project.title}}</h2>
-	<img
-		src="/static/img/projects/{{project['img_filename']}}"
-		alt="{{project.title}} Image"
-		class="project-image-sm" />
-	<p>{{replace_func(project.short_description) | safe}}</p>
+    <div class="card-main">
+        <h2 class="project-title">{{ project.title }}</h2>
+        <img
+                src="/static/img/projects/{{ project['img_filename'] }}"
+                alt="{{ project.title }} Image"
+                class="card-img project-image-sm"/>
+    </div>
+    <div class="card-desc">
+        <p class="project-short-desc">{{ replace_func(project.short_description) | safe }}
+            <p>Built Using:</p>
+        <ul class="project-tech-list">
+            {% for tech in project.techs %} {% with tech=tech %}
+                <li class="project-tech-item"> {{ tech.name }}</li>
+            {% endwith %} {% endfor %}
+        </ul>
+    </div>
 
-	<a href="{{project.title}}" class="grid-link">Click here to learn more!</a>
-	<br />
-	<a href="{{project.live_link}}" class="grid-link"
-		>{{project.live_link_description}}</a
-	>
-	<br />
-	<a href="{{project.repo_link}}" class="grid-link"
-		>{{project.repo_link_description}}</a
-	>
+    <div class="card-links">
+        <a href="{{ project.id }}" class="grid-link">Click here to learn more!</a>
+        <br/>
+        <a href="{{ project.live_link }}" target="_blank" class="grid-link"
+        >{{ project.live_link_description }}</a
+        >
+        <br/>
+        <a href="{{ project.repo_link }}" target="_blank" class="grid-link"
+        >{{ project.repo_link_description }}</a
+        >
+    </div>
+
 </div>
