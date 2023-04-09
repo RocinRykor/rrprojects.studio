@@ -10,15 +10,14 @@ import os
 
 project = Blueprint("project", __name__, url_prefix="/project")
 
+PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), os.pardir))
+PROJECTS_FILE_PATH = os.path.join(PROJECT_ROOT, 'static', 'json', 'projects.json')
+
 
 @project.route("/")
 def projects():
-    try:
-        with open(os.path.join(os.getcwd(), 'rrprojects/static/json/projects.json')) as f:
-            projects_data = json.load(f)
-    except Exception as e:
-        print(f"Error loading projects.json: {e}")
-        projects_data = []
+    with open(PROJECTS_FILE_PATH) as f:
+        projects_data = json.load(f)
 
     return render_template("public/projects/projects.html",
                            title="Steven's Projects",
@@ -27,18 +26,15 @@ def projects():
 
 @project.route("/<int:id>")
 def project_details(id):
-    try:
-        with open(os.path.join(os.getcwd(), 'rrprojects/static/json/projects.json')) as f:
-            projects_data = json.load(f)
+    with open(PROJECTS_FILE_PATH) as f:
+        projects_data = json.load(f)
 
-        for project in projects_data:
-            if project['id'] == id:
-                return render_template("public/projects/project_page.html",
-                                       title=project['title'],
-                                       project=project,
-                                       replace_func=replace_markdown)
-    except Exception as e:
-        print(f"Error loading projects.json: {e}")
+    for project in projects_data:
+        if project['id'] == id:
+            return render_template("public/projects/project_page.html",
+                                   title=project['title'],
+                                   project=project,
+                                   replace_func=replace_markdown)
 
     return "Project not found."
 
