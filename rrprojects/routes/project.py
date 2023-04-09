@@ -12,7 +12,7 @@ project = Blueprint("project", __name__, url_prefix="/project")
 
 @project.route("/")
 def projects():
-    with open('../static/json/projects.json') as f:
+    with open('rrprojects/static/json/projects.json') as f:
         projects_data = json.load(f)
 
     return render_template("public/projects/projects.html",
@@ -24,7 +24,7 @@ def projects():
 @project.route("/<int:id>")
 def project_details(id):
 
-    with open('../static/json/projects.json') as f:
+    with open('rrprojects/static/json/projects.json') as f:
         projects_data = json.load(f)
 
     for project in projects_data:
