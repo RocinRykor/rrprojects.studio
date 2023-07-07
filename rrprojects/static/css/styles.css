@@ -1,6 +1,6 @@
 /* 1 || Universal*/
 :root {
-    /* Steel Blue Pallete */
+    /* Steel Blue Palette */
     --dark: #1b3246;
     --medium: #4682b4;
     --light: #b2cce1;
@@ -273,6 +273,7 @@ a:hover {
     width: auto;
     min-height: auto;
     margin: 0;
+    padding: 15px;
 
     /* Start styling */
     border: 2px solid rgba(0, 0, 0, 0.3);
@@ -292,7 +293,8 @@ a:hover {
 }
 
 .card-desc {
-    padding-left: 5px;
+    padding-top: 15px;
+    padding-left: 15px;
 }
 
 .project-short-desc {
@@ -304,18 +306,21 @@ a:hover {
 .project-image,
 .project-image-xs,
 .project-image-sm,
-.project-image-lg {
+.project-image-med {
     border-radius: var(--default-border-radius);
     border: 1px solid lightgray;
+    object-fit: cover;
 }
 
-.project-image-lg {
-    /* Full Size Image*/
-    height: 500px;
-    width: 500px;
-}
 
 .project-image {
+    /* Full Size */
+    height: 500px;
+    width: 500px;
+    object-fit: contain;
+}
+
+.project-image-med {
     /* 75% Size */
     height: 375px;
     width: 375px;
