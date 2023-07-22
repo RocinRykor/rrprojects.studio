@@ -128,5 +128,56 @@
         "icons": ["javascript.svg", "react.svg"]
       }
     ]
+  },
+  {
+    "description": "No jokes, just a little chat messenger.\n\n The fourth of my CareerFoundry projects, the Chat App was built as an app for Mobile Devices using React Native.\n\nThe database for the conversations was stored in Google's Firebase",
+    "id": 6,
+    "img_filename": "chatapp.jpg",
+    "live_link": "",
+    "live_link_description": "No live version available",
+    "repo_link": "https://github.com/RocinRykor/Chat-App",
+    "repo_link_description": "Check out the project on GitHub!",
+    "short_description": "Fourth CareerFoundry Project, a simple messenger app built for mobile devices in React Native",
+    "title": "Chat App",
+    "techs": [
+      {
+        "name": "Javascript/React Native",
+        "description": "Backbone of the project, React native allowed for creation of a native mobile app.",
+        "icons": ["javascript.svg", "react.svg"]
+      },
+      {
+        "name": "Gifted Chat",
+        "description": "This popular chat UI library served for creating the basic foundation of the chat app",
+        "icons": []
+      },
+      {
+        "name": "Google Firebase",
+        "description": "Uses the Cloud Firestore database to house and sync data between the clients of the chat app.",
+        "icons": ["firebase.svg"]
+      }
+    ]
+  },
+  {
+    "description": "Why the name change? I'm sure there is a good reason.\n\n The fifth of my CareerFoundry projects, we return to the myMov project we created earlier and recreate it with Angular.",
+    "id": 7,
+    "img_filename": "myFlixAngular.png",
+    "live_link": "https://rocinrykor.github.io/myFlix-Angular-client/welcome",
+    "live_link_description": "View the live version here!",
+    "repo_link": "https://github.com/RocinRykor/myFlix-Angular-client",
+    "repo_link_description": "Check out the project on GitHub!",
+    "short_description": "Fifth CareerFoundry Project, working off the myMov data and API, this time with Angular",
+    "title": "myFlix Angular Client",
+    "techs": [
+      {
+        "name": "Typescript/Angular",
+        "description": "Backbone of the project, served as an introduction to typescript and used the Angular Material UI",
+        "icons": ["typescript.svg", "angular.svg"]
+      },
+      {
+        "name": "MongoDB",
+        "description": "Used to store user and movie information.",
+        "icons": ["mongodb.svg"]
+      }
+    ]
   }
 ]

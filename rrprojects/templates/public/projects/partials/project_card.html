@@ -2,11 +2,12 @@
 
 <div class="grid__item">
     <div class="card-main">
-        <h2 class="project-title">{{ project.title }}</h2>
         <img
                 src="/static/img/projects/{{ project['img_filename'] }}"
                 alt="{{ project.title }} Image"
                 class="card-img project-image-sm"/>
+
+        <h2 class="project-title">{{ project.title }}</h2>
     </div>
     <div class="card-desc">
         <p class="project-short-desc">{{ replace_func(project.short_description) | safe }}
