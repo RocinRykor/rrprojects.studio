@@ -253,30 +253,35 @@ a:hover {
 /* Main || Grids*/
 .grid {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: repeat(4, 1fr); /* Display 4 cards per line */
     grid-gap: 20px;
     padding: 0px 25px 0px 25px;
 }
 
-/* start grid fallback */
-.grid__item {
-    display: inline-block;
-    width: 33%;
+.tech-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Specific with techs to ensure it looks right */
+    grid-gap: 20px;
+    padding: 0px 25px 0px 25px;
 }
 
 .grid__item {
     display: flex;
     flex-direction: column;
     background-color: var(--medium);
-    border-radius: 30px;
     opacity: 100%;
     width: auto;
     min-height: auto;
     margin: 0;
-    padding: 15px;
 
     /* Start styling */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
     border: 2px solid rgba(0, 0, 0, 0.3);
+}
+
+.grid__item:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 .grid-link {
@@ -290,11 +295,19 @@ a:hover {
 .card-img {
     text-align: center;
     align-items: center;
+    height: 100%; /* Make the image take full height of the card */
+    width: 100%; /* Make the image take full width of the card */
+    object-fit: cover;
+    border-bottom: black 3px;
 }
 
 .card-desc {
     padding-top: 15px;
     padding-left: 15px;
+}
+
+.project-title {
+    padding-top: 10px; /* Add desired padding value */
 }
 
 .project-short-desc {
@@ -307,8 +320,6 @@ a:hover {
 .project-image-xs,
 .project-image-sm,
 .project-image-med {
-    border-radius: var(--default-border-radius);
-    border: 1px solid lightgray;
     object-fit: cover;
 }
 
@@ -329,7 +340,7 @@ a:hover {
 .project-image-sm {
     /* 50% Size */
     height: 250px;
-    width: 250px;
+    width: 1fr;
 }
 
 .project-image-xs {

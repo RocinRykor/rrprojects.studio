@@ -15,7 +15,7 @@
             <p>{{ replace_func(project.description) | safe }}</p>
         </div>
 
-        <div class="tech-list grid">
+        <div class="tech-list tech-grid">
             {% for tech in project.techs %} {% with tech=tech %}
                 {% include
 	"public/projects/partials/tech_card.html" %}
