@@ -1,17 +1,38 @@
 <!DOCTYPE html>
 {% extends "public/partials/base.html" %} {% block main %}
 
-<main class="profile-main">
-	<img
-		src="{{url_for('static', filename='img/steven-briggs-profile-pic.jpg')}}"
-		class="profile_portrait"
-		alt="Steven Briggs' Portrait" />
-	<h1>Hello World!</h1>
-	<p>
-		My name is Steven Briggs. I am a <span>web</span> developer from
-		Washington.
-	</p>
-	<a href="/project">Check out some of my projects</a>
-</main>
+    <main class="profile-main">
+        <h1>Hello World! 👋</h1>
+
+        <div class="transition-notice">
+            <h2>🚧 Site Transformation in Progress 🚧</h2>
+            <p>
+                I'm currently reimagining this space to focus exclusively on my personal projects and creative explorations!
+            </p>
+        </div>
+
+        <div class="current-status">
+            <p>
+                <strong>What's happening?</strong><br>
+                I've moved all professional portfolio content to my dedicated site:<br>
+                <a href="https://steven-briggs.com" target="_blank" class="professional-link">steven-briggs.com</a>
+            </p>
+
+            <p>
+                <strong>What to expect here soon:</strong>
+            </p>
+            <ul class="coming-soon-list">
+                <li>🎮 Game development experiments and prototypes</li>
+                <li>🤖 Discord bot showcase</li>
+                <li>🧙 Shadowrun 3e Character Creator and Manager</li>
+                <li>🎨 Digital art and creative coding projects</li>
+                <li>🔧 Open-source tools and utilities</li>
+            </ul>
+
+            <p class="timeline">
+                <strong>Launch Timeline:</strong> Late 2025
+            </p>
+        </div>
+    </main>
 
 {% endblock %}

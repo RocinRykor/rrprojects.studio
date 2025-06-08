@@ -4,12 +4,15 @@ from flask_migrate import Migrate
 
 from . import models
 from .config import Config
-
-db = models.db
+from .models import projects
+from .models import users
+from .models.db import data_base as db
 
 # Create any items that will be used in the app
-User = models.User
-Project = models.Project
+
+# Database Models
+User = users.User
+Project = projects.Project
 
 migrate = Migrate()
 login_manager = LoginManager()

@@ -12,17 +12,3 @@ def custom_error_page(e):
 def index():
     return render_template("public/index.html", title="Portfolio Site")
 
-
-@general.route("/about")
-def about():
-    return render_template("public/about.html", title="About Steven")
-
-
-@general.route("/contact")
-def contact():
-    return render_template("public/contact.html", title="Contact Steven")
-
-
-@general.route("/testing")
-def testing():
-    return render_template("public/testing.html", title="JavaScript Testing Grounds")
